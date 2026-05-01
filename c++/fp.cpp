@@ -5,11 +5,18 @@
 #include <string>
 using namespace std;
 int main(){
-int size=5;
-int array[]={2,3,4,7,6};
-for(int i=size-1;i>=0;i--){
-       cout<<array[i]<<" ";
+int size;
+cin>> size;
+vector <int> v;
+for(int i=0;i<size;i++){
+  int element;
+  cin>> element;
+  v.push_back(element);
 }
-  cout<<endl;
+for(int i=0;i<size;i++){
+  cout<<"vector is "<<v[i]<<" ";
+}
+
+   cout<<endl;
   return 0;
 }
