@@ -4,13 +4,20 @@
 #include <cmath>
 #include <string>
 using namespace std;
-void prefixsum(vector <int> &v){
-  int size=v.size();
-  for(int i=1;i<size;i++){
-    v[i]=v[i]+v[i-1];
+bool CheckPrefixAndSufixSum(vector <int> &v){
+int totalsum=0;
+for(int n=0;n<v.size();n++){
+  totalsum+=v[n];
+ }
+int prefixsum=0;
+for(int i=0;i<v.size(); i++){
+    prefixsum+=v[i];
+    int sufixsum=totalsum-prefixsum;
+    if(prefixsum==sufixsum){
+    return true;
     }
-  
-   return;
+  }
+ return false;
 }
 int main() {
 vector <int> v;
@@ -21,10 +28,6 @@ for(int i=0;i<size;i++){
     cin>>element;
     v.push_back(element);
 }
-prefixsum(v);
-for(int i=0;i<v.size();i++){
-  cout<<v[i]<<" ";
-}
-  cout<<endl;
+cout<<CheckPrefixAndSufixSum(v)<<endl;
   return 0;
 }
