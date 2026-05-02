@@ -4,13 +4,11 @@
 #include <cmath>
 #include <string>
 using namespace std;
-void squareandsort(vector <int> &v){
+void prefixsum(vector <int> &v){
   int size=v.size();
-  for(int i=0;i<size;i++){
-    v[i]=abs(v[i]);
-    v[i]=v[i]*v[i];
-  
-     }
+  for(int i=1;i<size;i++){
+    v[i]=v[i]+v[i-1];
+    }
   
    return;
 }
@@ -23,7 +21,7 @@ for(int i=0;i<size;i++){
     cin>>element;
     v.push_back(element);
 }
-squareandsort(v);
+prefixsum(v);
 for(int i=0;i<v.size();i++){
   cout<<v[i]<<" ";
 }
