@@ -4,30 +4,28 @@
 #include <cmath>
 #include <string>
 using namespace std;
-bool CheckPrefixAndSufixSum(vector <int> &v){
-int totalsum=0;
-for(int n=0;n<v.size();n++){
-  totalsum+=v[n];
- }
-int prefixsum=0;
-for(int i=0;i<v.size(); i++){
-    prefixsum+=v[i];
-    int sufixsum=totalsum-prefixsum;
-    if(prefixsum==sufixsum){
-    return true;
-    }
-  }
- return false;
-}
-int main() {
+int main(){
 vector <int> v;
+cout<<"enter size of vector?";
 int size;
-cin>>size;
+cin>> size;
 for(int i=0;i<size;i++){
-    int element;
-    cin>>element;
-    v.push_back(element);
+  int element;
+  cin>> element;
+  v.push_back(element);
 }
-cout<<CheckPrefixAndSufixSum(v)<<endl;
+int queries1,prefixsum1=0;
+cout<<"enter querie1"<<endl;
+cin>> queries1;
+for(int i=0;i<queries1;i++){
+  prefixsum1+=v[i];
+}
+int queries2,prefixsum2=0;
+cout<<"enter querie2"<<endl;
+cin>> queries2;
+for(int i=0;i<queries2;i++){
+  prefixsum2+=v[i];
+}
+cout<<prefixsum1-prefixsum2;
   return 0;
 }
