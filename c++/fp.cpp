@@ -21,8 +21,8 @@ int main(){
   int row;
   cout<<"enter row number";
   cin>> row;
-  for(int i=1;i<=row;i++){
-    for(int j=0;j<i;j++){
+  for(int i=0;i<=row;i++){
+    for(int j=0;j<=i;j++){
       cout<<ncr(i,j)<<" ";
     }
      cout<<endl;
