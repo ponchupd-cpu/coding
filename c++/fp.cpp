@@ -1,31 +1,51 @@
 #include <iostream>
+#include <string>
 #include <vector>
 #include <algorithm>
 #include <cmath>
-#include <string>
+#include <unordered_map>
+#include <map>
+#include <unordered_set>
+#include <numeric>
+#include <set>
+#include <iomanip>
 using namespace std;
-long long factorial(int n){
-  int fact=1;
-  for(int i=1;i<=n;i++){
-    fact*=i;
+
+void solve(){
+  int n;
+  cin>> n;
+  vector <int> v(n);
+  for(int i=0;i<v.size();i++){
+    int elements;
+    cin>> elements;
+    v[i]=elements;
+   
   }
-  return fact;
-}
-long long ncr(int n,int r){
-int x;
-x=factorial(n)/(factorial(r)*factorial(n-r));
-  return(x);
+  int max;
+  max=v[0];
+  for(int i=0;i<v.size();i++){
+    if(v[i]>max){
+      max=v[i];
+    }
+    else{
+
+    }
+  }
+  int sum=0;
+  for(int i=0;i<v.size();i++){
+    sum= sum+max;
+  
+  }
+  cout<<sum<<endl;
 }
 
 int main(){
-  int row;
-  cout<<"enter row number";
-  cin>> row;
-  for(int i=0;i<=row;i++){
-    for(int j=0;j<=i;j++){
-      cout<<ncr(i,j)<<" ";
+    cin.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
     }
-     cout<<endl;
-  }
-  return 0;
+    return 0;
 }
