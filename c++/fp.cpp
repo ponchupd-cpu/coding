@@ -9,39 +9,32 @@
 #include <numeric>
 #include <set>
 #include <iomanip>
+
 using namespace std;
 
 void solve(){
-  int n;
-  cin>> n;
-  vector <int> v(n);
-  for(int i=0;i<v.size();i++){
-    int elements;
-    cin>> elements;
-    v[i]=elements;
-   
-  }
-  int max;
-  max=v[0];
-  for(int i=0;i<v.size();i++){
-    if(v[i]>max){
-      max=v[i];
-    }
-    else{
-
-    }
-  }
-  int sum=0;
-  for(int i=0;i<v.size();i++){
-    sum= sum+max;
-  
-  }
-  cout<<sum<<endl;
+int n,k;cin>> n>> k;
+vector<int>v(n);
+for(int i=0;i<n;i++){
+    cin>> v[i];
+}
+map<int, int>cnt;
+for(int i=0;i<n;i++){
+    cnt[v[i]]++;
+ }
+int freq=cnt[k];
+if(freq==0){
+    cout<<"No"<<endl;
+}
+else{
+    cout<<"Yes"<<endl;
+}
 }
 
-int main(){
-    cin.tie(NULL);
+int main() {
     ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
     int t;
     cin >> t;
     while (t--) {
