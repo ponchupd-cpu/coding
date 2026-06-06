@@ -11,20 +11,25 @@
 #include <iomanip>
 
 using namespace std;
-
 void solve(){
-    long long n, k, x; 
-    cin >> n >> k >> x;
-    
-    long long min_sum = k * (k + 1) / 2;
-    long long max_sum = (n * (n + 1) / 2) - ((n - k) * (n - k + 1) / 2);
-    
-    if (x >= min_sum && x <= max_sum) {
-        cout << "Yes" << "\n";
-    } else {
-        cout << "No" << "\n";
-    }
+int n;cin>> n;
+vector<int>v(n);
+int min_element=1000000000;
+
+for(int i=0;i<n;i++){
+  int elements;
+  cin >>elements;
+  v[i]=abs(elements);
 }
+
+for(int i=0;i<n;i++){
+   if(v[i]<min_element){
+     min_element=v[i];
+   } 
+ }
+ cout<<min_element<<"\n";
+}
+
 
 int main() {
     ios_base::sync_with_stdio(false);
