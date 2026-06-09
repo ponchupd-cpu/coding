@@ -14,40 +14,24 @@
 using namespace std;
 
 void solve(){
-    int n, k;cin>> n>> k;
-    string s;cin>> s;
-    string z;cin>> z;
-    int counts=0;
-    int countz=0;
-    for(int i=0;i<n;i++){
-        if(s[i] == '0'){
-            counts++;
-        }
-        if(z[i] == '0'){
-            countz++;
-        }
-    }
-    int a,b;
-    a=n-counts;b=n-countz;
-    int countxor=0;
-    for(int i=0;i<n;i++){
-        if(s[i]==z[i]){
-            countxor++;
-        }
-    }
-    int c=n-countxor;
-    int v1,v2,v3;
-    v1=a*counts;
-    v2=b*countz;
-    v3=c*countxor;
-    int factor = ((1 << k)+1)/3;
-    if(k % 2 == 0){
-        cout << v1*(factor+1) + v2*(factor+1) + v3*factor << "\n";
-    }
-    if(k % 2 == 1){
-        cout << (v1+v2+v3)*factor << "\n";
-    }
-
+ int n;cin>> n;
+ vector<int>b(n);
+ for(int i=0;i<n;i++){
+  cin>> b[i];
+ }
+ vector<int>a;
+ a.push_back(b[0]);
+ for(int i=1;i<n;i++){
+  if(b[i]<b[i-1]){
+    a.push_back(b[i]);
+  }
+  a.push_back(b[i]);
+ }
+ cout<<a.size()<<"\n";
+ for(int i=0;i<a.size();i++){
+  cout<<a[i]<<" ";
+ }
+ cout <<"\n";
 }
 
 signed main() {
