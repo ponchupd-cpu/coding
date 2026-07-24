@@ -13,14 +13,12 @@
 #define int long long
 using namespace std;
 void solve(){
-long long n,k;cin>>n>>k;
-long long x=1;
-long long y=1e9+7;
-n%=y;
-for(int i=0;i<k;i++){
-  x=(x*n)%y;
+int n;cin>> n;
+for(int i=1;i<=n;i++){
+ if(n%i==0){
+  cout<<i<<"\n";
+  }
  }
- cout<<x<<"\n";
 }
  
  

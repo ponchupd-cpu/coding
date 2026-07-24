@@ -14,31 +14,14 @@
 using namespace std;
 
 void solve(){
-int n,k,x;cin>>n>>k>>x;
-if(x!=1){
-  cout<<"yes"<<"\n"<<n<<"\n";
-  for(int i=0;i<n;i++){
-    cout<<1<<" ";
-  }
- cout<<"\n";
-}
-else if(n%2==0 && k>=2){
-    cout<<"yes"<<"\n"<<n/2<<"\n";
-    for(int i=0;i<n/2;i++){
-      cout<<2<<" ";
-    }
-    cout<<"\n";
-  }
-else if(n%2!=0 && k>=3){
-  cout<<"yes"<<"\n"<<(n-3)/2+1<<"\n";
-  cout<<3<<" ";
-  for(int i=0;i<(n-3)/2;i++){
-    cout<<2<<" ";
-  }
-  cout<<"\n";
+int n,k;cin>>n>>k;
+if(n%k!=0){
+  cout<< 1 <<"\n";
+  cout<< n <<"\n";
 }
 else{
-  cout<<"no"<<"\n";
+  cout<< 2 <<"\n";
+  cout<< n <<" "<<n-1<<"\n";
  }
 }
 signed main() {

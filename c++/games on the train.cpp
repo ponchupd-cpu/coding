@@ -15,10 +15,7 @@ for(int i=0;i<n;i++){
 }
 sort(h.begin(),h.end());
 cout<<h[n-1]+1-h[0]<<"\n";
-}
-
-
-     
+} 
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
