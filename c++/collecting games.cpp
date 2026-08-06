@@ -39,12 +39,9 @@ for(int i=0;i<n;i++){
     result[paired_arr[i].second]=ans[i];
 }
 for(int i=0;i<n;i++){
-    if(i>0){
-        cout<<" ";
-    }
-    cout<<result[i];
- }
- cout<<"\n";
+    cout<<result[i]<<" ";
+}
+cout<<"\n";
 }
 int main(){
     ios_base::sync_with_stdio(false);
