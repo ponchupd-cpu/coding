@@ -15,21 +15,31 @@ vector<int>a(n);
 for(int i=0;i<n;i++){
   cin>>a[i];
 }
-bool pairs_gud=false;
+int k=0;
+int count=0;
 for(int i=0;i<n;i++){
-  for(int j=i+1;j<n;j++){
-    if(__gcd(a[i],a[j])<=2){
-      pairs_gud=true;
-      break;
+  if(a[i]==2){
+    count++;
+  }
+ }
+ if(count%2!=0){
+  cout<<-1<<"\n";
+ }
+ else if(count==0){
+  cout<<1<<"\n";
+ }
+ else{
+  int target=count/2;
+  for(int i=0;i<n;i++){
+    if(a[i]==2){
+      k++;
+    }  
+    if(k==target){
+      cout<<i+1<<"\n";
+      return;
     }
   }
-}
-if(pairs_gud==true){
-  cout<<"yes\n";
-}
-else{
-  cout<<"no\n";
-}
+ }
 }
 int main(){
     ios_base::sync_with_stdio(false);
