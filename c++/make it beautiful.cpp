@@ -5,27 +5,28 @@
 #include <unordered_map>
 #include <vector>
 #include <algorithm>
+#include <numeric>
 using namespace std;
 #define pb push_back
  
 void solve(){
 int n;cin>>n;
-string s;
-cin>> s;
-int ans=n;
-int left_ptr=0;int right_ptr=n-1;
-while(left_ptr<=right_ptr){
- if(s[left_ptr]!=s[right_ptr]){
-   ans=ans-2;
- }
- else{
-  break;
-  left_ptr++;right_ptr--;
-  }
- cout<<ans<<"\n";
- }
+vector<int>a(n);
+for(int i=0;i<n;i++){
+  cin>>a[i];
 }
-
+sort(a.begin(),a.end());
+if(a[0]==a[n-1]){
+  cout<<"NO\n";
+  return;
+ }
+  cout<<"YES\n";
+  cout<<a[n-1]<<" "<<a[0]<<" ";
+  for(int i=1;i<n-1;i++){
+    cout<<a[i]<<" ";
+  }
+  cout<<"\n";
+ }
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);

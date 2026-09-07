@@ -10,22 +10,22 @@ using namespace std;
  
 void solve(){
 int n;cin>>n;
-string s;
-cin>> s;
-int ans=n;
-int left_ptr=0;int right_ptr=n-1;
-while(left_ptr<=right_ptr){
- if(s[left_ptr]!=s[right_ptr]){
-   ans=ans-2;
- }
- else{
-  break;
-  left_ptr++;right_ptr--;
-  }
- cout<<ans<<"\n";
- }
+if(n<1){
+    cout<<0<<"\n";
 }
-
+vector<int>totient(n+1);
+for(int i=0;i<=n;i++){
+    totient[i]=i;
+}
+for(int i=2;i<=n;i++){
+   if(totient[i]==i){
+     for(int j=i;j<=n;j+=i){
+        totient[j] -=totient[j]/i;
+     }
+   }
+}
+cout<<totient[n]<<"\n";
+}
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);

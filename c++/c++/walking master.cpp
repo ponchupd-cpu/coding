@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 #include <string>
 #include <map>
 #include <unordered_map>
@@ -8,24 +7,20 @@
 using namespace std;
 #define pb push_back
  
+ 
 void solve(){
-int n;cin>>n;
-string s;
-cin>> s;
-int ans=n;
-int left_ptr=0;int right_ptr=n-1;
-while(left_ptr<=right_ptr){
- if(s[left_ptr]!=s[right_ptr]){
-   ans=ans-2;
- }
- else{
-  break;
-  left_ptr++;right_ptr--;
-  }
- cout<<ans<<"\n";
- }
+    long long a, b, c, d;
+    cin >> a >> b >> c >> d;
+    int dy = d - b;
+    int moves = dy + (a + dy - c);
+    if(dy < 0 || (a + dy) < c){
+        cout << -1 << '\n';
+    } 
+    else {
+        cout << moves << '\n';
+    }
 }
-
+     
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);

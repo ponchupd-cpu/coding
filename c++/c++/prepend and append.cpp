@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <vector>
 #include <algorithm>
+#include <numeric>
 using namespace std;
 #define pb push_back
  
@@ -17,15 +18,15 @@ int left_ptr=0;int right_ptr=n-1;
 while(left_ptr<=right_ptr){
  if(s[left_ptr]!=s[right_ptr]){
    ans=ans-2;
+   left_ptr++;
+   right_ptr--;
  }
  else{
   break;
-  left_ptr++;right_ptr--;
   }
- cout<<ans<<"\n";
  }
+ cout<<ans<<"\n";
 }
-
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);

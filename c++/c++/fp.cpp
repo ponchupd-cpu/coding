@@ -10,19 +10,24 @@ using namespace std;
  
 void solve(){
 int n;cin>>n;
-string s;
-cin>> s;
-int ans=n;
-int left_ptr=0;int right_ptr=n-1;
-while(left_ptr<=right_ptr){
- if(s[left_ptr]!=s[right_ptr]){
-   ans=ans-2;
+int xor_val=0;
+vector<int>a(n);
+for(int i=0;i<n;i++){
+    int val;
+    cin>>val;
+    xor_val ^= val;
+}
+
+if(n%2!=0){
+  cout<<xor_val<<"\n";
  }
- else{
-  break;
-  left_ptr++;right_ptr--;
+else{
+  if(xor_val==0){
+    cout<<0<<"\n";
   }
- cout<<ans<<"\n";
+  else{
+    cout<<-1<<"\n";
+  }
  }
 }
 

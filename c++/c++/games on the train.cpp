@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 #include <string>
 #include <map>
 #include <unordered_map>
@@ -10,22 +9,13 @@ using namespace std;
  
 void solve(){
 int n;cin>>n;
-string s;
-cin>> s;
-int ans=n;
-int left_ptr=0;int right_ptr=n-1;
-while(left_ptr<=right_ptr){
- if(s[left_ptr]!=s[right_ptr]){
-   ans=ans-2;
- }
- else{
-  break;
-  left_ptr++;right_ptr--;
-  }
- cout<<ans<<"\n";
- }
+vector<int>h(n);
+for(int i=0;i<n;i++){
+  cin>>h[i];
 }
-
+sort(h.begin(),h.end());
+cout<<h[n-1]+1-h[0]<<"\n";
+} 
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
