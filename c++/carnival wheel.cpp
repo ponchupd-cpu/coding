@@ -10,14 +10,18 @@ using namespace std;
 #define pb push_back
  
 void solve(){
-int l,a,b;cin>>l>>a>>b;
-int max_prize=0;
-int current=a;
-for(int i=0;i<l;i++){
-max_prize=max(max_prize,current);
-current=(current+b)%l;
+int n;cin>>n;
+int count=0;
+vector<int>a(n);
+for(int i=0;i<n;i++){
+    cin>>a[i];
 }
-cout<<max_prize<<"\n";
+for(int i=1;i<n;i++){
+    if(a[i]<a[i-1]){
+        count++;
+    }
+}
+cout<<count<<"\n";
 }
 int main(){
     ios_base::sync_with_stdio(false);
