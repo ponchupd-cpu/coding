@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include <math.h>
 int main() {
-    printf("hello world\n");
-    printf("hiiiiiiiiiiiiiiiii\n");
-    printf("leet code platform\n");
-    return 0;
+  int a = 10;
+  int c = 5;
+
+  int b= ++a + c--;
+  printf("%d", b);
 }
