@@ -1,9 +1,13 @@
 #include <stdio.h>
 #include <math.h>
+#include <ctype.h>
 int main() {
-  int a = 10;
-  int c = 5;
-
-  int b= ++a + c--;
-  printf("%d", b);
+  char a;
+  scanf("%c",&a);
+  if(isupper(a)){
+    printf(" %c uppercase");
+  }
+  else if(islower(a)){
+    printf("%c lowercase");
+  }
 }
