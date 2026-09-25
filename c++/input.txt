@@ -20,20 +20,19 @@ int left_pointer=0;
 int right_pointer=n-1;
 while(left_pointer<right_pointer){
     if(s[left_pointer]==s[right_pointer]){
-        left_pointer++;
-        right_pointer--;
-        continue;
+        continue;;
     }
-    if(s[left_pointer]==c && s[right_pointer]!= c|| s[left_pointer]!=c && s[right_pointer]==c){
+    if(s[left_pointer]!=c){
         count++;
     }
-    if(s[left_pointer]!=c && s[right_pointer]!=c){
-        count+=2;
+    if(s[right_pointer]!=c){
+        count++;
     }
     left_pointer++;
     right_pointer--;
    }
 cout<<count<<"\n";
+
 }
 int main(){
     ios_base::sync_with_stdio(false);
