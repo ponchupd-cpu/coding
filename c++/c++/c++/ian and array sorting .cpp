@@ -5,29 +5,30 @@
 #include <unordered_map>
 #include <vector>
 #include <algorithm>
-#include <numeric>
 using namespace std;
 #define pb push_back
-
+ 
 void solve(){
 int n;cin>>n;
-string s;
-cin>>s;
-int max_time=0;
-int length=0;
+bool sorted=true;
+vector<int>a(n);
 for(int i=0;i<n;i++){
-    if(s[i]=='#'){
-        length++;
-    }
-    else{
-        length=0;
-    }
-    if(length>0){
-            max_time=max(max_time,(length));
-        }
+  cin>>a[i];
 }
-cout<<(max_time+1)/2<<"\n";
-
+if(n%2!=0){
+    cout<<"yes\n";
+    return;
+}
+for(int i=1;i<n-1;i++){
+   int diff=a[i]-a[i-1];
+   a[i]-=diff;
+   a[i+1]-=diff;
+}
+if(a[n-2]<=a[n-1]){
+    cout<<"yes\n";
+} else{
+    cout<<"no\n";
+ }
 }
 int main(){
     ios_base::sync_with_stdio(false);

@@ -1,0 +1,62 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+void solve() {
+    int n;
+    if (!(cin >> n)) return; // Safe check for input
+    
+    string commands;
+    cin >> commands;
+    
+    vector<bool> isPrinted(n + 1, false);
+    vector<int> memoryStack;
+    
+    for (int i = 0; i < n; i++) {
+        int docNumber = i + 1;
+        char cmd = commands[i];
+        
+        if (cmd == '1') {
+            memoryStack.push_back(docNumber);
+        } 
+        else if (cmd == '2') {
+            if (!memoryStack.empty()) {
+                int topDoc = memoryStack.back();
+                memoryStack.pop_back();
+                isPrinted[topDoc] = true;
+            } else {
+                isPrinted[docNumber] = true;
+            }
+        } 
+        else if (cmd == '3') {
+            isPrinted[docNumber] = true;
+        }
+    }
+    
+    vector<int> unprintedDocs;
+    for (int i = 1; i <= n; i++) {
+        if (!isPrinted[i]) {
+            unprintedDocs.push_back(i);
+        }
+    }
+    
+    cout << unprintedDocs.size() << "\n";
+    
+    for (size_t i = 0; i < unprintedDocs.size(); i++) {
+        cout << unprintedDocs[i] << (i == unprintedDocs.size() - 1 ? "" : " ");
+    }
+    cout << "\n";
+}
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin >> t;
+    while (t--){
+        solve();
+    }
+}

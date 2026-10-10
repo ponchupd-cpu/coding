@@ -11,22 +11,26 @@ using namespace std;
 
 void solve(){
 int n;cin>>n;
-string s;
-cin>>s;
-int max_time=0;
-int length=0;
+int count=0;int ans=0;int sum=0;
+vector<int>a(n);
 for(int i=0;i<n;i++){
-    if(s[i]=='#'){
-        length++;
-    }
-    else{
-        length=0;
-    }
-    if(length>0){
-            max_time=max(max_time,(length));
-        }
+    cin>>a[i];
 }
-cout<<(max_time+1)/2<<"\n";
+for(int i=0;i<n;i++){
+    count++;
+    sum+=a[i];
+    if(sum<count*(count+1)/2){
+        cout<<"no\n";
+        return;
+    }
+}
+ans=count*(count+1)/2;
+if(sum>=ans){
+    cout<<"yes\n";
+}
+else{
+    cout<<"no\n";
+}
 
 }
 int main(){

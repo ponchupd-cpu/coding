@@ -1,34 +1,26 @@
 #include <iostream>
-#include <cmath>
 #include <string>
 #include <map>
 #include <unordered_map>
 #include <vector>
 #include <algorithm>
-#include <numeric>
 using namespace std;
 #define pb push_back
-
+ 
+ 
 void solve(){
-int n;cin>>n;
-string s;
-cin>>s;
-int max_time=0;
-int length=0;
-for(int i=0;i<n;i++){
-    if(s[i]=='#'){
-        length++;
+    long long a, b, c, d;
+    cin >> a >> b >> c >> d;
+    int dy = d - b;
+    int moves = dy + (a + dy - c);
+    if(dy < 0 || (a + dy) < c){
+        cout << -1 << '\n';
+    } 
+    else {
+        cout << moves << '\n';
     }
-    else{
-        length=0;
-    }
-    if(length>0){
-            max_time=max(max_time,(length));
-        }
 }
-cout<<(max_time+1)/2<<"\n";
-
-}
+     
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);

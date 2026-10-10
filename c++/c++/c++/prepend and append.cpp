@@ -8,26 +8,24 @@
 #include <numeric>
 using namespace std;
 #define pb push_back
-
+ 
 void solve(){
 int n;cin>>n;
 string s;
-cin>>s;
-int max_time=0;
-int length=0;
-for(int i=0;i<n;i++){
-    if(s[i]=='#'){
-        length++;
-    }
-    else{
-        length=0;
-    }
-    if(length>0){
-            max_time=max(max_time,(length));
-        }
-}
-cout<<(max_time+1)/2<<"\n";
-
+cin>> s;
+int ans=n;
+int left_ptr=0;int right_ptr=n-1;
+while(left_ptr<=right_ptr){
+ if(s[left_ptr]!=s[right_ptr]){
+   ans=ans-2;
+   left_ptr++;
+   right_ptr--;
+ }
+ else{
+  break;
+  }
+ }
+ cout<<ans<<"\n";
 }
 int main(){
     ios_base::sync_with_stdio(false);

@@ -11,22 +11,27 @@ using namespace std;
 
 void solve(){
 int n;cin>>n;
+char c;
+cin>>c;
 string s;
 cin>>s;
-int max_time=0;
-int length=0;
-for(int i=0;i<n;i++){
-    if(s[i]=='#'){
-        length++;
+int count=0;
+int left_pointer=0;
+int right_pointer=n-1;
+while(left_pointer<right_pointer){
+    if(s[left_pointer]==s[right_pointer]){
+        continue;;
     }
-    else{
-        length=0;
+    if(s[left_pointer]!=c){
+        count++;
     }
-    if(length>0){
-            max_time=max(max_time,(length));
-        }
-}
-cout<<(max_time+1)/2<<"\n";
+    if(s[right_pointer]!=c){
+        count++;
+    }
+    left_pointer++;
+    right_pointer--;
+   }
+cout<<count<<"\n";
 
 }
 int main(){
