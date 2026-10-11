@@ -10,13 +10,24 @@ using namespace std;
 #define pb push_back
 
 void solve(){
-int x,y,z;cin>>x>>y>>z;
-if((x&y)==(y&z)&&(y&z)==(z&x)){
-    cout<<"yes\n";
+long long n,m;
+long long sum=0; 
+long long ans=0;
+cin>>n>>m;
+vector<long long>a(n);
+for(int i=0;i<n;i++){
+    cin>>a[i];
 }
-else{
-    cout<<"no\n";
+sort(a.rbegin(),a.rend());
+for(int i=0;i<n;i++){
+    if(m<=0){
+        break;
+    }
+  ans=a[i]*m;
+   m--;
+   sum+=ans;
 }
+cout<<sum<<"\n";
 }
 int main(){
     ios_base::sync_with_stdio(false);
