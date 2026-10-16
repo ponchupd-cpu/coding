@@ -1,13 +1,20 @@
 #include <stdio.h>
-#include <math.h>
-#include <ctype.h>
+#include <stdlib.h>
+
 int main() {
-  char a;
-  scanf("%c",&a);
-  if(isupper(a)){
-    printf(" %c uppercase");
+  int x,a,b;
+  scanf("%d %d %d",&x,&a,&b);
+  int m,n,o;
+  if(x<80){
+    int m=80-x;
+    m=m*a;
+    o=20*b;
+    printf("%d",m+o);
   }
-  else if(islower(a)){
-    printf("%c lowercase");
+  else if(x>=80){
+    n=100-x;
+    n=n*b;
+    printf("%d",n);
   }
+  return 0;
 }
